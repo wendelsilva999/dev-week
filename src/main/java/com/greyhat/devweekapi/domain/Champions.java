@@ -65,6 +65,15 @@ public class Champions implements Serializable {
 	public void setImageUrl(String imageUrl) {
 		this.imageUrl = imageUrl;
 	}
+
+	public String generateContextByQuestion(String question) {
+		return """
+				Pergunta: %s
+				Nome do Campeão: %s
+				Função: %s
+				Lore (Histori): %s
+				""".formatted(question, this.name, this.role, this.lore);
+	}
 	
 	
 }
